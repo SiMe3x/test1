@@ -1,0 +1,29 @@
+ {% extends 'headertemplate.html' %}
+ {% block content %}
+ {% csrf_token %}
+
+
+ {% for prod in product_list %}
+
+ Название продукта:{{prod.product_name}}
+ Автор продукта: {{prod.author}}<br>
+
+{% for usr in students_list %}
+{% if prod.id == usr.product.id %}
+обращение к продукту{{usr.product.product_name}}
+Студент{{usr.student}}<br>
+{% else %}
+студентов нет<br>
+{% endif %}
+
+{% endfor %}
+
+<br>
+ {% endfor %}
+
+ 
+
+
+
+
+ {% endblock %}

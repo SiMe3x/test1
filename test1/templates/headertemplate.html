@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <title>Test1</title> 
+
+
+
+
+ </head>
+ <body>
+<ul>
+<li><a href="/">Продукт</a></li>
+<li><a href="/">урок</a></li>
+<li><a href="/">группы</a></li>
+<li>
+    {% if request.user.is_authenticated %}
+      Вы вошли как 
+      <a href="/user_login/">      
+        {{ user.get_username }}
+      </a>
+      {% else %}
+      <a href="/user_login/">
+        Войти
+        {{ user.get_username }}
+      </a>
+    {% endif %}
+</li>
+
+
+</ul>
+<br>
+ {% block content %}
+
+ {% endblock %}
+ </body>
+</html>

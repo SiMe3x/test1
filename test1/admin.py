@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Lesson, User_have_product, Groupe_product
+from .models import Product, User_have_product, Lesson, Groupe_product, User_have_groupe
 
 
 @admin.register(Product)
@@ -17,9 +17,13 @@ class LessonAdmin(admin.ModelAdmin):
     list_display = ('lesson_name',)
 
 @admin.register(User_have_product)        
-class LessonAdmin(admin.ModelAdmin):
-    list_display = ('Student',)
+class User_have_productAdmin(admin.ModelAdmin):
+    list_display = ('student','product')
 
 @admin.register(Groupe_product)        
-class LessonAdmin(admin.ModelAdmin):
+class Groupe_productAdmin(admin.ModelAdmin):
     list_display = ('groupe_name',)
+
+@admin.register(User_have_groupe)        
+class User_have_groupeAdmin(admin.ModelAdmin):
+    list_display = ('student','groupe_name',)
