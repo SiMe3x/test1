@@ -1,0 +1,21 @@
+{% extends 'headertemplate.html' %}
+{% block content %}
+<form>
+   {% csrf_token %}
+       <select name="product" size="15" >
+          {% for prod in product_list %}
+             <option value={{prod.id}}>{{prod.product_name}}</option>
+          {% endfor %}
+       </select>
+       <select name="student" size="15">
+           {% for usr in students_list %}
+             <option value={{usr.id}}>{{usr}}</option>
+           {% endfor %}
+       </select>
+   <input type="submit" formmethod="post" value="Send Request" />
+
+</form>
+
+
+
+ {% endblock %}
