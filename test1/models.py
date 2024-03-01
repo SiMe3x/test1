@@ -2,9 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-
-
-	
 class Product(models.Model):
 	product_name = models.CharField(max_length=150, default="Product")
 	author = models.ForeignKey(User ,on_delete=models.CASCADE)
@@ -13,7 +10,6 @@ class Product(models.Model):
 	price = models.PositiveIntegerField(default=1)
 	min_users = models.PositiveIntegerField(default=2)
 	max_users = models.PositiveIntegerField(default=3)
-
 	def __str__(self):
 		return f"{self.product_name}, {self.author},{self.start_product_date}"
 

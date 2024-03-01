@@ -12,7 +12,7 @@
 <ul>
 <li><a href="/">Продукт</a></li>
 <li><a href="/">урок</a></li>
-<li><a href="/">группы</a></li>
+<li><a href="/get_acsess">Запись студентов на продукт</a></li>
 <li>
     {% if request.user.is_authenticated %}
       Вы вошли как 
@@ -30,6 +30,8 @@
 
 </ul>
 <br>
+{{page_status}}
+<br><br><br>
  {% block content %}
 
  {% endblock %}
